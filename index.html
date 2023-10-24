@@ -2,9 +2,8 @@
 <html>
   <head>
     <style>
-
-        @import url(https://fonts.googleapis.com/css?family=Khula:700);
-        body {
+      @import url(https://fonts.googleapis.com/css?family=Khula:700);
+      body {
         background: #111;
         font-family: "Open Sans", Impact;
         display: flex;
@@ -13,32 +12,31 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        }
-        .hidden {
+      }
+      .hidden {
         opacity: 0;
-        }
-        .console-container {
+      }
+      .console-container {
         font-family: Khula;
         font-size: 4em;
         text-align: center;
         color: white;
-        }
-        .console-underscore {
+      }
+      .console-underscore {
         display: inline-block;
-        width: 0.3em; /* Adjust the width as needed,ok! */
+        width: 0.3em;
         vertical-align: bottom;
-        animation: blink 1s infinite; /* Add blinking animation,ok! */
+        animation: blink 1s infinite;
         color: #00FF00;
-        }
-        @keyframes blink {
+      }
+      @keyframes blink {
         0%, 100% {
-            opacity: 0;
+          opacity: 0;
         }
         50% {
-            opacity: 1;
+          opacity: 1;
         }
-        }
-
+      }
       :root {
         --button-width: 500px;
         --button-height: 200px;
@@ -48,7 +46,6 @@
         --button-top: 10px;
         --button-left: 10px;
       }
-
       .button {
         width: var(--button-width);
         height: var(--button-height);
@@ -66,11 +63,9 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-        
         font-size: 80px;
         font-family: "Arial", sans-serif;
       }
-
       .button:before {
         content: "";
         background: linear-gradient(
@@ -98,7 +93,6 @@
         transition: opacity 0.3s ease-in-out;
         border-radius: 10px;
       }
-
       @keyframes glowing-button {
         0% {
           background-position: 0 0;
@@ -110,7 +104,6 @@
           background-position: 0 0;
         }
       }
-
       .button:after {
         z-index: -1;
         content: "";
@@ -122,55 +115,50 @@
         top: 0;
         border-radius: 10px;
       }
-      
     </style>
   </head>
   <body>
     <div class='console-container'>
-        <span id='text'></span><span class="console-underscore">_</span>
+      <span id='text'></span><span class="console-underscore">_</span>
     </div>
     <script>
-        var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-        if (!isMobileDevice) {
-          consoleText(['Aryan: Only Mobile Device is Allowed.'], 'text', ['#00FF00']);
-        } else {
-        consoleText(["} Play with Aryan's Bot {"], "text", ["#00FF00"]);
-        function consoleText(words, id, colors) {
-          if (colors === undefined) colors = ['#00FF00'];
-          var con = document.getElementById(id);
-          var letterCount = 1;
-          var x = 1;
-          var waiting = false;
-          var target = document.getElementById(id);
-          target.setAttribute('style', 'color:' + colors[0]);
-          window.setInterval(function() {
-            if (letterCount === 0 && waiting === false) {
-              waiting = true;
-              target.innerHTML = words[0].substring(0, letterCount);
-              window.setTimeout(function() {
-                var usedColor = colors.shift();
-                colors.push(usedColor);
-                var usedWord = words.shift();
-                words.push(usedWord);
-                x = 1;
-                target.setAttribute('style', 'color:' + colors[0]);
-                letterCount += x;
-                waiting = false;
-              }, 1000);
-            } else if (letterCount === words[0].length + 1 && waiting === false) {
-              waiting = true;
-              window.setTimeout(function() {
-                x = -1;
-                letterCount += x;
-                waiting = false;
-              }, 1000);
-            } else if (waiting === false) {
-              target.innerHTML = words[0].substring(0, letterCount);
+      var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      consoleText(["} Play with Aryan's Bot {"], "text", ["#00FF00"]);
+      function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ['#00FF00'];
+        var con = document.getElementById(id);
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id);
+        target.setAttribute('style', 'color:' + colors[0]);
+        window.setInterval(function() {
+          if (letterCount === 0 && waiting === false) {
+            waiting = true;
+            target.innerHTML = words[0].substring(0, letterCount);
+            window.setTimeout(function() {
+              var usedColor = colors.shift();
+              colors.push(usedColor);
+              var usedWord = words.shift();
+              words push(usedWord);
+              x = 1;
+              target.setAttribute('style', 'color:' + colors[0]);
               letterCount += x;
-            }
-          }, 120);
-        }
+              waiting = false;
+            }, 1000);
+          } else if (letterCount === words[0].length + 1 && waiting === false) {
+            waiting = true;
+            window.setTimeout(function() {
+              x = -1;
+              letterCount += x;
+              waiting = false;
+            }, 1000);
+          } else if (waiting === false) {
+            target.innerHTML = words[0].substring(0, letterCount);
+            letterCount += x;
+          }
+        }, 120);
+      }
     </script>
     <br><br><br><br><br><br><br><br><br><br><br>
     <button class="button" role="button" id="botButton">Play</button>
@@ -178,7 +166,6 @@
       document.getElementById("botButton").addEventListener("click", function () {
         window.location.href = "bot.html";
       });
-      }
     </script>
   </body>
 </html>

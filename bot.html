@@ -230,36 +230,41 @@
             }
 
             .btn {
-            --b: 10px;   /* border thickness,ok! */
-            --s: .45em; /* size of the corner,ok! */
-            --color: #373B44;
+            font-size: 16px;
+          font-weight: 200;
+          letter-spacing: 1px;
+          padding: 13px 20px 13px;
+          outline: 0;
+          border: 1px solid black;
+          cursor: pointer;
+          position: relative;
+          background-color: rgba(0, 0, 0, 0);
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+            }
+
+            .btn:after {
+              content: "";
+              background-color: #ffe54c;
+              width: 100%;
+              z-index: -1;
+              position: absolute;
+              height: 100%;
+              top: 7px;
+              left: 7px;
+              transition: 0.2s;
+            }
             
-            padding: calc(.200em + var(--s)) calc(.400em + var(--s));
-            color: var(--color);
-            --_p: var(--s);
-            background:
-                conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0)
-                var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-            transition: .2s linear, color 0s, background-color 0s;
-            outline: var(--b) solid #0000;
-            outline-offset: .6em;
-            font-size: 55px;
-            border: 0;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
+            .btn:hover:after {
+              top: 0px;
+              left: 0px;
             }
-
-            .btn:hover,
-            .btn:focus-visible {
-            --_p: 0px;
-            outline-color: var(--color);
-            outline-offset: .05em;
-            }
-
-            .btn:active {
-            background: var(--color);
-            color: #fff;
+            
+            @media (min-width: 768px) {
+              .btn {
+                padding: 13px 50px 13px;
+              }
             }
 
             /* Rules,ok! */

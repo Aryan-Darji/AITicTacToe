@@ -126,6 +126,13 @@
     </style>
   </head>
   <body>
+    <script>
+        var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+        if (!isMobileDevice) {
+          consoleText(['Aryan: Only Mobile Device is Allowed.'], 'text', ['#00FF00']);
+        } else {
+    </script>
     <div class='console-container'>
         <span id='text'></span><span class="console-underscore">_</span>
     </div>
@@ -173,6 +180,7 @@
       document.getElementById("botButton").addEventListener("click", function () {
         window.location.href = "bot.html";
       });
+      }
     </script>
   </body>
 </html>

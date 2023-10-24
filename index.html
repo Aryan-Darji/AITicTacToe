@@ -123,6 +123,13 @@
     </div>
     <script>
       var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      if (!isMobileDevice) {
+        consoleText(['Aryan: Only Mobile Device is Allowed.'], 'text', ['#00FF00']);
+      } else {
+        consoleText(["} Play with Aryan's Bot {"], "text", ["#00FF00"]);
+      }
+
       function consoleText(words, id, colors) {
         if (colors === undefined) colors = ['#00FF00'];
         var con = document.getElementById(id);

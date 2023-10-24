@@ -1,2 +1,2 @@
 # AITicTacToe
-Create an interactive and user-friendly website that allows users to play the classic game of Tic-Tac-Toe. Users challenge a computer bot, making it a great way to spend leisure time and have fun.
+I've created a AI-based web Tic-Tac-Toe game that focuses on classic gameplay and efficient web development. The project offers an unbeatable AI opponent, clean web design, and responsive functionality, demonstrating my skills in logic and web development.

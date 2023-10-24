@@ -97,12 +97,12 @@
         -webkit-filter: blur(5px);
         width: calc(100% + 4px);
         height: calc(100% + 4px);
-        animation: glowing-button-85 20s linear infinite;
+        animation: glowing-button 20s linear infinite;
         transition: opacity 0.3s ease-in-out;
         border-radius: 10px;
       }
 
-      @keyframes glowing-button-85 {
+      @keyframes glowing-button {
         0% {
           background-position: 0 0;
         }
@@ -133,7 +133,7 @@
         <span id='text'></span><span class="console-underscore">_</span>
     </div>
     <script>
-        consoleText([": Play with Aryan's Bot"], "text", ["#00FF00"]);
+        consoleText(["} Play with Aryan's Bot "], "text", ["#00FF00"]);
         function consoleText(words, id, colors) {
           if (colors === undefined) colors = ['#00FF00'];
           var con = document.getElementById(id);
